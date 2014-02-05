@@ -26,3 +26,9 @@ The default is for it to check every minute from the time you start.
 * Update and Download notifications separately.
 * More notification options.
 * More options in general
+
+### Legal Notes:
+
+* This is licensed under the [MIT License](https://tldrlegal.com/license/mit-license) so pretty well do what you want, just please attribute me if you change it and don't blame me if something explodes.
+* Be aware of the API call limits of Steam and NMA
+** So don't download/update more than 800 games per hour or 100,000 per day
