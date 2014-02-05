@@ -21,6 +21,9 @@ Great for those really downloads for games you can't wait to play!
 You should be good to go now!
 The default is for it to check every minute from the time you start.
 
+
+Note: I'm not sure if this will work if your steam profile is private. Please add it as an issue if it is one and I will look into it when I can!
+
 ### Future Plans:
 * Variable check intervals.
 * Update and Download notifications separately.
