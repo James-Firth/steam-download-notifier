@@ -1,7 +1,7 @@
 Steam Download Notifier
 =======================
 
-Uses Python and the Android app [Notify My Android](https://www.notifymyandroid.com) to push notifications to your phone when a Steam game finishes downloading.
+Uses Python (2.7) and the Android app [Notify My Android](https://www.notifymyandroid.com) to push notifications to your phone when a Steam game finishes downloading.
 
 Great for those really long downloads for games you can't wait to play!
 
@@ -21,14 +21,20 @@ Great for those really long downloads for games you can't wait to play!
 You should be good to go now!
 The default is for it to check every minute from the time you start.
 
-
-Note: I'm not sure if this will work if your steam profile is private. Please add it as an issue if it is one and I will look into it when I can!
+### Testing
+* I've only tested it with my steam profile which is public. If private steam profiles don't work, please add it as an issue!
+* Only tested on Windows 7 so far.
 
 ### Future Plans:
 * Variable check intervals.
 * Update and Download notifications separately.
 * More notification options.
 * More options in general
+
+### Libraries used:
+* [PyNMA](https://github.com/uskr/pynma) to push notifications to NMA
+* [steamapi](https://github.com/scottrice/steamapi) to make the steam Web API calls through Python easier.
+Note: Both of these are licensed under the MIT License and the License remains in the appropriate folder.
 
 ### Legal Notes:
 
