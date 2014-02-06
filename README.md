@@ -1,7 +1,7 @@
 Steam Download Notifier
 =======================
 
-Uses Python (2.7) and the Android app [Notify My Android](https://www.notifymyandroid.com) to push notifications to your phone when a Steam game finishes downloading.
+Uses Python (2.7) and the iOS/Android app [Pushover](https://pushover.net) to push notifications to your phone when a Steam game finishes downloading.
 
 Great for those really long downloads for games you can't wait to play!
 
@@ -12,11 +12,13 @@ Great for those really long downloads for games you can't wait to play!
 
 2. Get your steam ID # and replace the 2nd line of config_keys with it. If you don't have a custom url steam community url you can find it on your profile. If not use [this tool](http://steamidconverter.com/) to find it quicky
 
-3. Generate an [NMA api key](https://www.notifymyandroid.com/account.jsp) and replace the 3rd line of config_keys with it
+3. Register a [Pushover Application](https://pushover.net/apps/build) and replace the 3rd line of config_keys with it
 
-4. Replace the 4th line of the config_keys file with the location of your 'downloading' folder for Steam. Found somewhere like C:\Steam\steamapps\downloading
+4. Replace the 4th line of config_keys with your Pushover User Key
 
-5. Now navigate to where you unzipped the repo and the run the command `python steam_install_notifier.py`
+5. Replace the 5th line of the config_keys file with the location of your 'downloading' folder for Steam. Found somewhere like C:\Steam\steamapps\downloading
+
+6. Now navigate to where you unzipped the repo and the run the command `python steam_install_notifier.py`
 
 You should be good to go now!
 The default is for it to check every minute from the time you start.
@@ -32,7 +34,6 @@ The default is for it to check every minute from the time you start.
 * More options in general
 
 ### Libraries used:
-* [PyNMA](https://github.com/uskr/pynma) to push notifications to NMA
 * [steamapi](https://github.com/scottrice/steamapi) to make the steam Web API calls through Python easier.
 Note: Both of these are licensed under the MIT License and the License remains in the appropriate folder.
 

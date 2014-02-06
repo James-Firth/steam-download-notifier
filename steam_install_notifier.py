@@ -1,6 +1,6 @@
+import httplib, urllib
 from os import listdir
 from os.path import isdir, isfile, join, exists
-from pynma import PyNMA
 from time import sleep
 from sys import exit
 import steamapi
@@ -25,12 +25,16 @@ myGames = me.games
 
 #Setup PyNMA
 if isfile("config_keys"):
-	NMA_api_key = config_file.readline().strip()
+	pushover_token = config_file.readline().strip()
 else:
-	print "Error: Please add an NMA api key to your config_keys file"
+	print "Error: Please add an Pushover App Token key to your config_keys file"
 	exit(1)
 
-notifier = PyNMA(NMA_api_key)
+if isfile("config_keys"):
+	pushover_user_key = config_file.readline().strip()
+else:
+	print "Error: Please add your Pushover Use Key to your config_keys file"
+	exit(1)
 
 #other variables
 if isfile("config_keys"):
@@ -66,8 +70,15 @@ downloading = get_game_names()
 def notify_android(name, id):
 	print "Notifying about " + name
 	res = notifier.push("Steam", "Finished Downloading", name, 'http://store.steampowered.com/app/'+k)
-	print "NMA results: "
-	print res
+	conn = httplib.HTTPSConnection("api.pushover.net:443")
+	conn.request("POST", "/1/messages.json",
+	  urllib.urlencode({
+	    "token": pushover_token,
+	    "user": pushover_user_key,
+	    "title": "Steam Download Complete"
+	    "message": str(name)+" is now downloaded.",
+	  }), { "Content-type": "application/x-www-form-urlencoded" })
+	conn.getresponse()
 	return None
 
 
