@@ -1,9 +1,9 @@
-steam-download-notifier
+Steam Download Notifier
 =======================
 
 Uses Python and the Android app [Notify My Android](https://www.notifymyandroid.com) to push notifications to your phone when a Steam game finishes downloading.
 
-Great for those really downloads for games you can't wait to play!
+Great for those really long downloads for games you can't wait to play!
 
 ##Installation & API Keys
 
