@@ -67,7 +67,7 @@ def get_game_names():
 
 downloading = get_game_names()
 
-def notify_android(name, id):
+def send_notification(name, id):
 	print "Notifying about " + name
 	res = notifier.push("Steam", "Finished Downloading", name, 'http://store.steampowered.com/app/'+k)
 	conn = httplib.HTTPSConnection("api.pushover.net:443")
@@ -75,8 +75,8 @@ def notify_android(name, id):
 	  urllib.urlencode({
 	    "token": pushover_token,
 	    "user": pushover_user_key,
-	    "title": "Steam Download Complete"
-	    "message": str(name)+" is now downloaded.",
+	    "title": "Steam Download Complete",
+	    "message": name+" is now downloaded.",
 	  }), { "Content-type": "application/x-www-form-urlencoded" })
 	conn.getresponse()
 	return None
@@ -90,7 +90,7 @@ while (True):
 			pass
 		else:
 			print "Download complete! "+downloading[k]
-			notify_android(downloading[k], k)
+			send_notification(downloading[k], k)
 			del downloading[k]
 	sleep(60)
 	#print "Done sleeping!"
